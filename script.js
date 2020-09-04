@@ -52,7 +52,7 @@ const handelOnChangeEvent = function(){
 
 const filterMovies = function(movieTitle){
     filmGrid.innerHTML = ""
-    let nameFilterMovies = movies.Title.forEach(movieTitle)
+    let nameFilterMovies = movies.filter(movieName => movieName.Title == movieTitle)
     console.log(nameFilterMovies)
     for (i = 0; i < nameFilterMovies.length; i++){
     const createImg = document.createElement("img")
