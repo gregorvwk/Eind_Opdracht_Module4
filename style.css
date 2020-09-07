@@ -1,4 +1,124 @@
 body {
-  background: lightblue;
+  background: black;
+  margin: 0 auto;
+}
+
+header {
+  margin: 0 auto;
+  color: white;
+  text-align: center;
+  width: 30em;
+  border-radius: 20px;
+}
+
+header h6 {
+  font-size: 0.02rem;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+h2 {
+  font-size: 15px;
+}
+
+.nav {
+  color: white;
+  margin: 0 10px;
+  display: -ms-grid;
+  display: grid;
+  background: lightgray;
+  width: 130px;
+  border-radius: 20px;
+  margin-top: 15px;
+  overflow: hidden;
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+  height: 50px;
+}
+
+.nav-menu {
+  list-style-type: none;
+  margin: 0;
+}
+
+#images {
+  width: 50px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.change {
+  color: black;
+  margin: 0 10px;
+  display: -ms-grid;
+  display: grid;
+  background: lightgray;
+  width: 130px;
+  border-radius: 20px;
+  margin-top: 15px;
+  overflow: hidden;
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+  height: 500px;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+}
+
+.container {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-left: -40px;
+}
+
+.film-grid {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (min-width: 800px) {
+  #film-grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+  .film-poster {
+    padding: 5px;
+  }
+  h1 {
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 1100px) {
+  #film-grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+  .film-poster {
+    padding: 5px;
+  }
+  h1 {
+    font-size: 30px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

@@ -7,9 +7,13 @@ const searchBtn = document.getElementsByClassName("search__btn")
 const movieseperate = movies.map(movieArray => ({movieArray}))
 
 const addMoviesToDom = function(i) {
+    const movieLi = document.createElement("li")
+    const movieLink = document.createElement("a")
     const createImg = document.createElement("img")
-    filmGrid.appendChild(createImg)
+    filmGrid.appendChild(movieLi).appendChild(movieLink).append(createImg)
     createImg.src = movieseperate[i].movieArray.Poster
+    movieLink.href = "https://www.imdb.com/title/" + movieseperate[i].movieArray.imdbID
+    movieLi.className = "film-poster"
 }
 
 for (i = 0; i < movies.length; i++){
@@ -27,23 +31,18 @@ const handelOnChangeEvent = function(){
     switch (event.target.value){
         case "princess-films":
             filterMovies("Princess")
-            console.log("Hey ik ben princesse films");
         break;
         case "x-men-films":
             filterMovies("X-Men")
-            console.log("Hey ik ben X-men films");
         break;
         case "avenger-films":
             filterMovies("Avenger")
-            console.log("Hey ik ben Avenger films");
         break;
         case "batman-films":
             filterMovies("Batman")
-            console.log("Hey ik ben Batman films");
         break;
         case "latest-films":
             filterLatest()
-            console.log("Hey ik ben latets films");
         break;
     }
 }
@@ -52,21 +51,47 @@ const handelOnChangeEvent = function(){
 
 const filterMovies = function(movieTitle){
     filmGrid.innerHTML = ""
-    let nameFilterMovies = movies.filter(movieName => movieName.Title == movieTitle)
-    console.log(nameFilterMovies)
+    let nameFilterMovies = movies.filter((movieName) => {
+        return movieName.Title.indexOf(movieTitle) != -1;
+    })
     for (i = 0; i < nameFilterMovies.length; i++){
+    const movieLi = document.createElement("li")
+    const movieLink = document.createElement("a")
     const createImg = document.createElement("img")
-    filmGrid.appendChild(createImg)
+    filmGrid.appendChild(movieLi).appendChild(movieLink).append(createImg)
     createImg.src = nameFilterMovies[i].Poster
+    movieLink.href = "https://www.imdb.com/title/" + nameFilterMovies[i].imdbID
+    movieLi.className = "film-poster"
     }
 }
+
 
 const filterLatest = function(){
     filmGrid.innerHTML = ""
     let latestMovies =  movies.filter(movieArray => movieArray.Year >= 2014)
     for (i = 0; i < latestMovies.length; i++){
+    const movieLi = document.createElement("li")
+    const movieLink = document.createElement("a")
     const createImg = document.createElement("img")
-    filmGrid.appendChild(createImg)
+    filmGrid.appendChild(movieLi).appendChild(movieLink).append(createImg)
     createImg.src = latestMovies[i].Poster
+    movieLink.href = "https://www.imdb.com/title/" + latestMovies[i].imdbID
+    movieLi.className = "film-poster"
     }
 }
+
+// menu
+
+let navTag = document.getElementById("nav-id")
+let nav = document.getElementsByClassName("nav");
+let image = document.getElementById("images");
+let change = document.getElementsByClassName("change");
+
+image.addEventListener("click", function(){
+    if (navTag.className == "nav"){
+        console.log("check")
+        navTag.className = "change";
+    } else {
+        navTag.className = "nav";
+    }
+})

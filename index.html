@@ -2,27 +2,44 @@
 <html>
     <head>
         <title>Film DataBase</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <link href="style.css" rel="stylesheet" type="text/css">
         <script defer src="movies.js" type="text/javascript"></script>
         <script defer src="script.js" type="text/javascript"></script>
     </head>
     <body>
         <header>
-            <nav>
-                <input type="radio" name="film-filter" class="search__btn" value="princess-films">
-                <h3>Princess</h3>
-                <input type="radio" name="film-filter" class="search__btn" value="x-men-films">
-                <h3>X-Men</h3>
-                <input type="radio" name="film-filter" class="search__btn" value="avenger-films">
-                <h3>Avanger</h3>
-                <input type="radio" name="film-filter" class="search__btn" value="batman-films">
-                <h3>Batman</h3>
-                <input type="radio" name="film-filter" class="search__btn" value="latest-films">
-                <h3>Latest Movies</h3>
-            </nav>
+            <h1>TotaalGratisDownloadbaareFilms.nl</h1>
+            <h2>We hebben toestemming</h2>
+            <h6>Echt waar!</h6>
         </header>
         <main>
-            <div>
+            <nav class="nav" id="nav-id">
+                <img id="images" src="menu.png" alt="hamburger">
+                <ul class="nav-menu">
+                    <li>
+                <input type="radio" name="film-filter" class="search__btn" value="princess-films">
+                <h3>Princess</h3>
+                </li>
+                <li>
+                <input type="radio" name="film-filter" class="search__btn" value="x-men-films">
+                <h3>X-Men</h3>
+                </li>
+                <li>
+                <input type="radio" name="film-filter" class="search__btn" value="avenger-films">
+                <h3>Avanger</h3>
+                </li>
+                <li>
+                <input type="radio" name="film-filter" class="search__btn" value="batman-films">
+                <h3>Batman</h3>
+                </li>
+                <li>
+                <input type="radio" name="film-filter" class="search__btn" value="latest-films">
+                <h3>Latest Movies</h3>
+                </li>
+                </ul>
+            </nav>
+            <div class="container">
                 <ul id="film-grid"></ul>
             </div>
         </main>
