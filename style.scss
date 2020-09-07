@@ -65,9 +65,9 @@ main {
     margin: 0 auto;
 }
 .container {
+    margin: 0 auto;
     align-items: center;
     justify-content: center;
-    margin-left: -40px;
 
 }
 .film-grid {
@@ -78,11 +78,15 @@ main {
 // media querry 
 
 @media (min-width: 800px){
+    .container {
+        margin: 0 auto;
+    }
     #film-grid {
         display: grid; 
         grid-template-columns: 1fr 1fr;
         grid-column-gap: 0px;
         grid-row-gap: 0px; 
+        justify-content: center;
     }
     .film-poster {
         padding: 5px;
@@ -92,7 +96,9 @@ main {
     }
 }
 @media (min-width: 1100px){
-
+    .container {
+        margin: 0 auto;
+    }
     #film-grid{
         display: grid; 
         grid-template-columns: 1fr 1fr 1fr; 
